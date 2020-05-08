@@ -13,7 +13,6 @@ const pool = promiseMysql.createPool({
 });
 
 exports.connect = (fn) => async (...args) => {
-  console.log('헤이');
   /* DB 커넥션을 한다. */
   let con = await pool.getConnection();
   /* 비지니스 로직에 con을 넘겨준다. */

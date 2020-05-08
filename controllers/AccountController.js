@@ -35,3 +35,10 @@ exports.login = async (req, res, next) => {
     });
   })(req, res, next);
 };
+
+
+exports.test = async (req, res, next) => {
+  await AccountService.testInsert();
+  return res.json(commonResult(constants.SUCCESS, null, null));
+};
+

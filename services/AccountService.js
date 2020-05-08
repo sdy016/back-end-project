@@ -96,6 +96,25 @@ exports.memeberExists = async (email) => {
   return rows;
 };
 
+
+exports.testInsert = async () => {
+
+    const insert = mysqlConnection.transaction(async (con) => {
+        await con.query("INSERT INTO posts(content, img, createdAt, updatedAt, deletedAt, userId) VALUES('abcd', 'efg', NOW(), NOW(), NULL, 2)");
+        // await con.query("INSERT INTO posts(content, img, createdAt, updatedAt, deletedAt, userId) VALUES('abcd', 'efg', NOW(), NOW(), NULL, 2)");
+        // await con.query("INSERT INTO posts(content, img, createdAt, updatedAt, deletedAt, userId) VALUES('abcd', 'efg', NOW(), NOW(), NULL, 2)");
+        // await con.query("INSERT INTO posts(content, img, createdAt, updatedAt, deletedAt, userId) VALUES('abcd', 'efg', NOW(), NOW(), NULL, 2)");
+        // await con.query("INSERT INTO posts(content, img, createdAt, updatedAt, deletedAt, userId) VALUES('abcd', 'efg', NOW(), NOW(), NULL, 2)");
+        // await con.query("INSERT INTO posts(content, img, createdAt, updatedAt, deletedAt, userId) VALUES('abcd', 'efg', NOW(), NOW(), NULL, 2)");
+        //return;
+        return 'success';
+    });
+    let temp = insert();
+    console.log('temp: ', temp);
+    return temp;
+};
+
+
 exports.loginCheck = async (id) => {
   let returnData = [];
   try {
